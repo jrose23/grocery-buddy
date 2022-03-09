@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>GroceryBuddy</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <p><span class="logo logo-bold">Grocery</span><span class="logo logo-light">Buddy</span></p>
+            </nav>
+        </header>
+
+        <main>
+            <section class="item-form-container">
+                <div class="container">
+                    <form class="item-form">
+                        <div class="item-form-name">
+                            <label for="itemName">Item Name</label>
+                            <input type="text" name="itemName" id="itemName" placeholder="Enter Grocery Item..." />
+                        </div>
+                        <div class="item-form-category">
+                            <label for="itemCategory">Category</label>
+                            <select name="itemCategory" id="itemCategory">
+                                <option value="" class="option-disabled" disabled selected>Category...</option>
+                                <option value="Produce">Produce</option>
+                                <option value="Meat">Meat</option>
+                                <option value="Dairy">Dairy</option>
+                            </select>
+                        </div>
+                        <div class="item-form-submit">
+                            <button type="submit" class="item-form-btn">Add to Shopping List</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="shopping-list">
+                <div class="container">
+                    <h1>Shopping List</h1>
+
+                    <details class="category" open>
+                        <summary class="category-header green">
+                            <span class="category-header-icon green">
+                                <i class="las la-apple-alt"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Produce</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="produce-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header green">
+                            <span class="category-header-icon green">
+                                <i class="las la-apple-alt"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Meat</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="meat-list"></ul>
+                    </details>
+                </div>
+            </section>
+        </main>
+        <!-- JS -->
+        <script src="./app.js" type="module"></script>
+    </body>
+</html>
