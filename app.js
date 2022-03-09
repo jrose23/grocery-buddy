@@ -2,14 +2,14 @@ import UI from './UI.js';
 import Store from './Store.js';
 import GroceryItem from './GroceryItem.js';
 
-const ui = new UI();
-
 // Get Shopping List
 document.addEventListener('DOMContentLoaded', Store.displayShoppingList);
 
 // Add new Grocery Item
 document.querySelector('.item-form').addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const ui = new UI();
 
     const itemName = document.querySelector('#itemName').value;
     const itemCategory = document.querySelector('#itemCategory').value;
@@ -29,6 +29,8 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
 
 // Remove Grocery Item
 document.querySelector('.shopping-list').addEventListener('click', (e) => {
+    const ui = new UI();
+
     let itemID;
 
     if (e.target.classList.contains('remove')) {

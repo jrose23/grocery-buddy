@@ -14,22 +14,29 @@ export default class Store {
     }
 
     static displayShoppingList() {
+        const ui = new UI();
         const shoppingList = Store.getShoppingList();
 
         shoppingList.forEach((item) => {
-            const ui = new UI();
-
             ui.addGroceryItem(item);
         });
     }
 
     static addToLocalStorage(item) {
-        const shoppingList = this.getShoppingList();
+        const shoppingList = Store.getShoppingList();
         shoppingList.push(item);
         localStorage.setItem('GBShoppingList', JSON.stringify(shoppingList));
     }
 
     static removeFromLocalStorage(id) {
-        return;
+        const shoppingList = Store.getShoppingList();
+
+        shoppingList.forEach((item, index) => {
+            if (item.id == id) {
+                shoppingList.splice(index, 1);
+            }
+        });
+
+        localStorage.setItem('GBShoppingList', JSON.stringify(shoppingList));
     }
 }
