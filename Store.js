@@ -39,4 +39,9 @@ export default class Store {
 
         localStorage.setItem('GBShoppingList', JSON.stringify(shoppingList));
     }
+
+    static deleteShoppingList() {
+        localStorage.removeItem('GBShoppingList');
+        location.reload();
+    }
 }

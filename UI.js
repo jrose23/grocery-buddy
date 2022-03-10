@@ -13,7 +13,7 @@ export default class UI {
 
         const completedButton = document.createElement('button');
         completedButton.className = 'btn-completed';
-        completedButton.innerHTML = '<i class="las la-check-circle remove"></i>';
+        completedButton.innerHTML = '<i class="las la-times-circle remove"></i>';
 
         listItem.appendChild(listItemText);
         listItem.appendChild(completedButton);
@@ -41,7 +41,31 @@ export default class UI {
         document.querySelector('#itemCategory').value = '';
     }
 
-    toggleArrow() {
-        return;
+    showNotification(type, message) {
+        const notification = document.querySelector('.notification');
+        const notificationMessage = document.querySelector('.notification-message');
+
+        if (type === 'error') {
+            notification.classList.add('error');
+        } else {
+            notification.classList.add('success');
+        }
+
+        notificationMessage.innerText = message;
+
+        notification.classList.add('show-notification');
+
+        setTimeout(() => {
+            notification.classList.remove('show-notification');
+            notification.classList.add('hide-notification');
+            notification.className = 'notification';
+        }, 2000);
+    }
+
+    toggleArrow(target) {
+        if (target.classList.contains('category-header')) {
+            const arrow = target.lastElementChild;
+            arrow.classList.toggle('rotate');
+        }
     }
 }
