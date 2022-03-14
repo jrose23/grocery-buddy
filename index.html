@@ -30,6 +30,7 @@
                                 <option value="Produce">Produce</option>
                                 <option value="Meat">Meat</option>
                                 <option value="Dairy">Dairy</option>
+                                <option value="Frozen">Frozen</option>
                             </select>
                         </div>
                         <div class="item-form-submit">
@@ -64,9 +65,9 @@
                     </details>
 
                     <details class="category" open>
-                        <summary class="category-header green">
-                            <span class="category-header-icon green">
-                                <i class="las la-apple-alt"></i>
+                        <summary class="category-header red">
+                            <span class="category-header-icon red">
+                                <i class="las la-drumstick-bite"></i>
                             </span>
                             <div class="category-header-text">
                                 <p>Meat & Seafood</p>
@@ -77,12 +78,42 @@
                         </summary>
                         <ul class="category-list" id="meat-list"></ul>
                     </details>
+
+                    <details class="category" open>
+                        <summary class="category-header blue">
+                            <span class="category-header-icon blue">
+                                <i class="las la-ice-cream"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Frozen Foods</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="frozen-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header yellow">
+                            <span class="category-header-icon yellow">
+                                <i class="las la-cheese"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Dairy</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="dairy-list"></ul>
+                    </details>
                 </div>
             </section>
 
             <div class="notification">
                 <!-- error show-notification -->
-                <p class="notification-message">Oops!... Please add an Item and/or Category.</p>
+                <p class="notification-message"></p>
             </div>
         </main>
         <!-- JS -->

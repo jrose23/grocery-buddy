@@ -2,13 +2,7 @@ import UI from './UI.js';
 
 export default class Store {
     static getShoppingList() {
-        let shoppingList;
-
-        if (localStorage.getItem('GBShoppingList') === null) {
-            shoppingList = [];
-        } else {
-            shoppingList = JSON.parse(localStorage.getItem('GBShoppingList'));
-        }
+        const shoppingList = JSON.parse(localStorage.getItem('GBShoppingList') || '[]');
 
         return shoppingList;
     }
@@ -18,7 +12,7 @@ export default class Store {
         const shoppingList = Store.getShoppingList();
 
         shoppingList.forEach((item) => {
-            ui.addGroceryItem(item);
+            ui.createGroceryItem(item);
         });
     }
 

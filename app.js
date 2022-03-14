@@ -22,15 +22,15 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
         ui.clearFormFields();
 
         // Add Grocery Item to DOM
-        ui.addGroceryItem(item);
+        ui.createGroceryItem(item);
 
         // Add Grocery Item to LS
         Store.addToLocalStorage(item);
 
         // Show success message
-        ui.showNotification('success', 'Added Item to  Shopping List!');
+        ui.showNotification('success', 'Added Item to Shopping List!');
     } else {
-        console.log('ERROR');
+        // Show error message
         ui.showNotification('error', 'Oops!... Please fill all form fields.');
     }
 });

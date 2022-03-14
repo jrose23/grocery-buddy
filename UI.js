@@ -1,11 +1,12 @@
 import Store from './Store.js';
 
 export default class UI {
-    addGroceryItem(item) {
+    createGroceryItem(item) {
         // Create List Item
         const listItem = document.createElement('li');
         listItem.className = 'category-list-item';
         listItem.setAttribute('data-id', item.id);
+        listItem.setAttribute('data-category', item.category);
 
         const listItemText = document.createElement('span');
         listItemText.className = 'list-item-text';
@@ -18,8 +19,13 @@ export default class UI {
         listItem.appendChild(listItemText);
         listItem.appendChild(completedButton);
 
-        // Add List Item to appropriate category
-        switch (item.category) {
+        this.addToShoppingList(listItem);
+    }
+
+    addToShoppingList(listItem) {
+        const category = listItem.getAttribute('data-category');
+
+        switch (category) {
             case 'Produce':
                 const produceList = document.querySelector('#produce-list');
                 produceList.appendChild(listItem);
@@ -27,6 +33,14 @@ export default class UI {
             case 'Meat':
                 const meatList = document.querySelector('#meat-list');
                 meatList.appendChild(listItem);
+                break;
+            case 'Frozen':
+                const frozenList = document.querySelector('#frozen-list');
+                frozenList.appendChild(listItem);
+                break;
+            case 'Dairy':
+                const dairyList = document.querySelector('#dairy-list');
+                dairyList.appendChild(listItem);
                 break;
         }
     }
