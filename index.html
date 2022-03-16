@@ -27,10 +27,14 @@
                             <label for="itemCategory">Category</label>
                             <select name="itemCategory" id="itemCategory">
                                 <option value="" disabled selected>Category...</option>
-                                <option value="Produce">Produce</option>
-                                <option value="Meat">Meat</option>
+                                <option value="Bakery">Bakery</option>
+                                <option value="Beer-Wine">Beer & Wine</option>
                                 <option value="Dairy">Dairy</option>
-                                <option value="Frozen">Frozen</option>
+                                <option value="Deli">Deli</option>
+                                <option value="Dry-Goods">Dry Goods</option>
+                                <option value="Frozen">Frozen Foods</option>
+                                <option value="Meat-Seafood">Meat & Seafood</option>
+                                <option value="Produce">Produce</option>
                             </select>
                         </div>
                         <div class="item-form-submit">
@@ -50,18 +54,93 @@
                     </div>
 
                     <details class="category" open>
-                        <summary class="category-header green">
-                            <span class="category-header-icon green">
-                                <i class="las la-apple-alt"></i>
+                        <summary class="category-header yellow">
+                            <span class="category-header-icon yellow">
+                                <i class="las la-birthday-cake"></i>
                             </span>
                             <div class="category-header-text">
-                                <p>Produce</p>
+                                <p>Bakery</p>
                             </div>
                             <span class="category-header-arrow">
                                 <i class="las la-angle-up"></i>
                             </span>
                         </summary>
-                        <ul class="category-list" id="produce-list"></ul>
+                        <ul class="category-list" id="bakery-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header burgundy">
+                            <span class="category-header-icon burgundy">
+                                <i class="las la-wine-glass-alt"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Beer & Wine</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="beer-wine-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header blue">
+                            <span class="category-header-icon blue">
+                                <i class="las la-cheese"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Dairy</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="dairy-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header orange">
+                            <span class="category-header-icon orange">
+                                <i class="las la-hotdog"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Deli</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="deli-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header purple">
+                            <span class="category-header-icon purple">
+                                <i class="las la-box"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Dry Goods</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="dry-goods-list"></ul>
+                    </details>
+
+                    <details class="category" open>
+                        <summary class="category-header teal">
+                            <span class="category-header-icon teal">
+                                <i class="las la-ice-cream"></i>
+                            </span>
+                            <div class="category-header-text">
+                                <p>Frozen Foods</p>
+                            </div>
+                            <span class="category-header-arrow">
+                                <i class="las la-angle-up"></i>
+                            </span>
+                        </summary>
+                        <ul class="category-list" id="frozen-list"></ul>
                     </details>
 
                     <details class="category" open>
@@ -76,37 +155,22 @@
                                 <i class="las la-angle-up"></i>
                             </span>
                         </summary>
-                        <ul class="category-list" id="meat-list"></ul>
+                        <ul class="category-list" id="meat-seafood-list"></ul>
                     </details>
 
                     <details class="category" open>
-                        <summary class="category-header blue">
-                            <span class="category-header-icon blue">
-                                <i class="las la-ice-cream"></i>
+                        <summary class="category-header green">
+                            <span class="category-header-icon green">
+                                <i class="las la-apple-alt"></i>
                             </span>
                             <div class="category-header-text">
-                                <p>Frozen Foods</p>
+                                <p>Produce</p>
                             </div>
                             <span class="category-header-arrow">
                                 <i class="las la-angle-up"></i>
                             </span>
                         </summary>
-                        <ul class="category-list" id="frozen-list"></ul>
-                    </details>
-
-                    <details class="category" open>
-                        <summary class="category-header yellow">
-                            <span class="category-header-icon yellow">
-                                <i class="las la-cheese"></i>
-                            </span>
-                            <div class="category-header-text">
-                                <p>Dairy</p>
-                            </div>
-                            <span class="category-header-arrow">
-                                <i class="las la-angle-up"></i>
-                            </span>
-                        </summary>
-                        <ul class="category-list" id="dairy-list"></ul>
+                        <ul class="category-list" id="produce-list"></ul>
                     </details>
                 </div>
             </section>

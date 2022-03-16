@@ -1,7 +1,7 @@
 import Store from './Store.js';
 
 export default class UI {
-    createGroceryItem(item) {
+    createShoppingListItem(item) {
         // Create List Item
         const listItem = document.createElement('li');
         listItem.className = 'category-list-item';
@@ -30,9 +30,9 @@ export default class UI {
                 const produceList = document.querySelector('#produce-list');
                 produceList.appendChild(listItem);
                 break;
-            case 'Meat':
-                const meatList = document.querySelector('#meat-list');
-                meatList.appendChild(listItem);
+            case 'Meat-Seafood':
+                const meatSeafoodList = document.querySelector('#meat-seafood-list');
+                meatSeafoodList.appendChild(listItem);
                 break;
             case 'Frozen':
                 const frozenList = document.querySelector('#frozen-list');
@@ -41,6 +41,22 @@ export default class UI {
             case 'Dairy':
                 const dairyList = document.querySelector('#dairy-list');
                 dairyList.appendChild(listItem);
+                break;
+            case 'Beer-Wine':
+                const beerWineList = document.querySelector('#beer-wine-list');
+                beerWineList.appendChild(listItem);
+                break;
+            case 'Bakery':
+                const bakeryList = document.querySelector('#bakery-list');
+                bakeryList.appendChild(listItem);
+                break;
+            case 'Deli':
+                const deliList = document.querySelector('#deli-list');
+                deliList.appendChild(listItem);
+                break;
+            case 'Dry-Goods':
+                const dryGoodsList = document.querySelector('#dry-goods-list');
+                dryGoodsList.appendChild(listItem);
                 break;
         }
     }

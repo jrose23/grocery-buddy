@@ -2,7 +2,7 @@ import UI from './UI.js';
 
 export default class Store {
     static getShoppingList() {
-        const shoppingList = JSON.parse(localStorage.getItem('GBShoppingList') || '[]');
+        const shoppingList = JSON.parse(localStorage.getItem('GBShoppingList')) || [];
 
         return shoppingList;
     }
@@ -12,8 +12,13 @@ export default class Store {
         const shoppingList = Store.getShoppingList();
 
         shoppingList.forEach((item) => {
-            ui.createGroceryItem(item);
+            ui.createShoppingListItem(item);
         });
+    }
+
+    static deleteShoppingList() {
+        localStorage.removeItem('GBShoppingList');
+        location.reload();
     }
 
     static addToLocalStorage(item) {
@@ -32,10 +37,5 @@ export default class Store {
         });
 
         localStorage.setItem('GBShoppingList', JSON.stringify(shoppingList));
-    }
-
-    static deleteShoppingList() {
-        localStorage.removeItem('GBShoppingList');
-        location.reload();
     }
 }

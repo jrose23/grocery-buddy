@@ -22,7 +22,7 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
         ui.clearFormFields();
 
         // Add Grocery Item to DOM
-        ui.createGroceryItem(item);
+        ui.createShoppingListItem(item);
 
         // Add Grocery Item to LS
         Store.addToLocalStorage(item);
@@ -31,7 +31,7 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
         ui.showNotification('success', 'Added Item to Shopping List!');
     } else {
         // Show error message
-        ui.showNotification('error', 'Oops!... Please fill all form fields.');
+        ui.showNotification('error', 'Oops! Please fill all form fields.');
     }
 });
 
