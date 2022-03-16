@@ -17,7 +17,10 @@ export default class Store {
     }
 
     static deleteShoppingList() {
+        const ui = new UI();
+
         localStorage.removeItem('GBShoppingList');
+
         location.reload();
     }
 

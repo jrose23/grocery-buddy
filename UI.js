@@ -8,10 +8,12 @@ export default class UI {
         listItem.setAttribute('data-id', item.id);
         listItem.setAttribute('data-category', item.category);
 
+        // Create list item text
         const listItemText = document.createElement('span');
         listItemText.className = 'list-item-text';
         listItemText.appendChild(document.createTextNode(`${item.name}`));
 
+        // Create list item completed button
         const completedButton = document.createElement('button');
         completedButton.className = 'btn-completed';
         completedButton.innerHTML = '<i class="las la-times-circle remove"></i>';
@@ -19,36 +21,26 @@ export default class UI {
         listItem.appendChild(listItemText);
         listItem.appendChild(completedButton);
 
+        // Add list item to category list
         this.addToShoppingList(listItem);
     }
 
     addToShoppingList(listItem) {
         const category = listItem.getAttribute('data-category');
 
+        // Add list item to appropriate category
         switch (category) {
-            case 'Produce':
-                const produceList = document.querySelector('#produce-list');
-                produceList.appendChild(listItem);
-                break;
-            case 'Meat-Seafood':
-                const meatSeafoodList = document.querySelector('#meat-seafood-list');
-                meatSeafoodList.appendChild(listItem);
-                break;
-            case 'Frozen':
-                const frozenList = document.querySelector('#frozen-list');
-                frozenList.appendChild(listItem);
-                break;
-            case 'Dairy':
-                const dairyList = document.querySelector('#dairy-list');
-                dairyList.appendChild(listItem);
+            case 'Bakery':
+                const bakeryList = document.querySelector('#bakery-list');
+                bakeryList.appendChild(listItem);
                 break;
             case 'Beer-Wine':
                 const beerWineList = document.querySelector('#beer-wine-list');
                 beerWineList.appendChild(listItem);
                 break;
-            case 'Bakery':
-                const bakeryList = document.querySelector('#bakery-list');
-                bakeryList.appendChild(listItem);
+            case 'Dairy':
+                const dairyList = document.querySelector('#dairy-list');
+                dairyList.appendChild(listItem);
                 break;
             case 'Deli':
                 const deliList = document.querySelector('#deli-list');
@@ -57,6 +49,18 @@ export default class UI {
             case 'Dry-Goods':
                 const dryGoodsList = document.querySelector('#dry-goods-list');
                 dryGoodsList.appendChild(listItem);
+                break;
+            case 'Frozen':
+                const frozenList = document.querySelector('#frozen-list');
+                frozenList.appendChild(listItem);
+                break;
+            case 'Meat-Seafood':
+                const meatSeafoodList = document.querySelector('#meat-seafood-list');
+                meatSeafoodList.appendChild(listItem);
+                break;
+            case 'Produce':
+                const produceList = document.querySelector('#produce-list');
+                produceList.appendChild(listItem);
                 break;
         }
     }
@@ -77,11 +81,11 @@ export default class UI {
 
         if (type === 'error') {
             notification.classList.add('error');
+            notificationMessage.innerHTML = `<i class="las la-exclamation-circle error-icon"></i> ${message}`;
         } else {
             notification.classList.add('success');
+            notificationMessage.innerHTML = `<i class="las la-check-circle success-icon"></i> ${message}`;
         }
-
-        notificationMessage.innerText = message;
 
         notification.classList.add('show-notification');
 

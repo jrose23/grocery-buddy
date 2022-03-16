@@ -28,10 +28,10 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
         Store.addToLocalStorage(item);
 
         // Show success message
-        ui.showNotification('success', 'Added Item to Shopping List!');
+        ui.showNotification('success', 'Item added to Shopping List!');
     } else {
         // Show error message
-        ui.showNotification('error', 'Oops! Please fill all form fields.');
+        ui.showNotification('error', 'Please enter Item and Category!');
     }
 });
 
