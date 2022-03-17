@@ -6,7 +6,7 @@ import GroceryItem from './GroceryItem.js';
 document.addEventListener('DOMContentLoaded', Store.displayShoppingList);
 
 // Add new Grocery Item
-document.querySelector('.item-form').addEventListener('submit', (e) => {
+document.querySelector('.item-form').addEventListener('submit', e => {
     e.preventDefault();
 
     const ui = new UI();
@@ -36,7 +36,7 @@ document.querySelector('.item-form').addEventListener('submit', (e) => {
 });
 
 // Remove Grocery Item
-document.querySelector('.shopping-list').addEventListener('click', (e) => {
+document.querySelector('.shopping-list').addEventListener('click', e => {
     const ui = new UI();
 
     let itemID;
@@ -55,11 +55,13 @@ document.querySelector('.shopping-list').addEventListener('click', (e) => {
 
 // Delete Shopping List
 document.querySelector('.btn-clear-all').addEventListener('click', () => {
-    Store.deleteShoppingList();
+    if (window.confirm('Delete shopping list?')) {
+        Store.deleteShoppingList();
+    }
 });
 
 // Toggle Category Arrow
-document.querySelector('.shopping-list').addEventListener('click', (e) => {
+document.querySelector('.shopping-list').addEventListener('click', e => {
     const ui = new UI();
 
     ui.toggleArrow(e.target);
